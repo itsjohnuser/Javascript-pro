@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-exercise</title>
+</head>
+<body>
+  <!--9a exercise
+  9b exercise change text
+  9c head tails
+  -->
+  <button onclick="
+    document.querySelector('.button').innerHTML = '9b Change!';
+  " class="button">9a</button>
+  
+
+  <button onclick="
+  document.querySelector('.js-choice')
+  .innerHTML = 'You choose : heads';
+    
+  " >heads</button>
+
+  <button onclick="
+    document.querySelector('.js-choice')
+    .innerHTML = 'You choose : tails';
+  ">tails</button>
+  <p class="js-choice"></p>
+
+  <input type="text" class="text-input">
+  <button onclick="
+  const inputElement=document.querySelector('.text-input');
+  document.querySelector('.js-message')
+  .innerHTML = `your name is ${inputElement.value}`;
+  " class="inputSubmit">Submit</button>
+  <p class="js-message"></p>
+
+  <script>
+    
+  </script>
+</body>
+</html>
