@@ -9,9 +9,9 @@
   
   
   <script>
-    const product = {
+   /* const product = {
       name : 'laptop',
-      price:'20k'
+      price:'20k'    //Dot notation   
     };
     console.log(product);
     console.log(product.name);
@@ -22,7 +22,73 @@
     console.log(product.price);
     product.name = 'mobile';
     console.log(product.name);
+    */  
 
+    //Bracket notation is used when dot notation is not supported ex: console.log(product.delivery-time)
+    /*
+    const product2 = {
+      name :'shirt',
+      ['delivery-time']: '1 day',
+      rating : {
+        stars: 4,
+        outOf: 5,
+        average: 4.5   //nested object   
+      },
+      fun: function function1(){    //method ex:Math.round() here Math is object and random is function . object + function = method 
+        console.log('hello');
+        console.log('2 + 2');
+
+      }
+
+    };
+    console.log(product2['name']); //Bracket notation 
+    console.log(product2['delivery-time']); //Bracket notation
+    console.log(product2.rating); //nested object
+    product2.fun(); //function call
+    console.log(JSON.stringify(product2)); // javascript to json , Json is syntax to javascript is gives less code 
+
+    const jsonString =  JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));  //JSON to javascript
+    */ 
+
+    console.log('hello world'.length); //
+    console.log('hello world'.toUpperCase())
+
+    const object1 = {
+      message: 'hello world'
+    };
+    const object2 = object1;
+    object1.message = 'goodbye world';
+    console.log(object1.message); // 'goodbye world' reference
+
+   const object4 = {
+      message: 'good job!',
+      price:799
+    };
+   // const message = object4.message;
+    const {message , price} = object4; //destructuring
+    console.log(message); // 'good job!'
+    console.log(price); // 799
+
+
+    //shorthandproperty
+    const object5 = {
+      //message:message 
+      message,
+     // method:function function1(){
+       // console.log('method')
+      //}
+
+      method(){
+        console.log('method')
+      }
+    
+    };
+    console.log(object5); //
+    object5.method(); // 'method'
+
+    //buil-in objects
+    //consoe.log 2. Math.random(); 3. JSON stringify (object); 4.localStorage
   </script>
 </body>
 </html>
