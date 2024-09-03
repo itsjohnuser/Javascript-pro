@@ -9,6 +9,10 @@
   <!--9a exercise
   9b exercise change text
   9c head tails
+  9d input text that print in on page
+  9e add event .key enter
+  9f reuse the code
+  9I
   -->
   <button onclick="
     document.querySelector('.button').innerHTML = '9b Change!';
@@ -27,15 +31,27 @@
   ">tails</button>
   <p class="js-choice"></p>
 
-  <input type="text" class="text-input">
-  <button onclick="
-  const inputElement=document.querySelector('.text-input');
-  document.querySelector('.js-message')
-  .innerHTML = `your name is ${inputElement.value}`;
+  <input type="text" class="text-input" onkeydown="
+    if(event.key === 'Enter'){
+      inputElementSelect();
+    }
+  ">
+  <button onclick=" 
+  inputElementSelect();
   " class="inputSubmit">Submit</button>
   <p class="js-message"></p>
 
+  <input type="text" placeholder="type something" class="in"onkeyup="
+    const inputElement = document.querySelector('.in');
+    document.querySelector('.js-message').innerHTML = inputElement.value;
+  ">
+
   <script>
+    function inputElementSelect(key){
+      const inputElement=document.querySelector('.text-input');
+      document.querySelector('.js-message')
+     .innerHTML = `your name is ${inputElement.value}`;
+    }
     
   </script>
 </body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+    .js-button{
+      border: none;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px;
+      cursor: pointer;
+      margin-bottom: 30px;
+
+    }
+    .is-subscribed{
+      background-color: rgb(240,240,240);
+      color: black;
+
+
+
+    }
+    .js-calculator{
+      border: none;
+      background-color: green;
+      color: white;
+      
+      padding: 10px;
+      cursor: pointer;
+    }
+    .js-cost-input{
+      width: 200px;
+      padding: 10px;
+      border:  1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button onclick="
+    Subscribe();  
+   " class="js-button">Subscribe</button>
+
+   <p>Amazon shipping calculator</p>
+   <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    handleCostKeydown(event)
+   ">
+   <button onclick="calculateTotal();
+
+   " class="js-calculator">Calculator</button>
+   <p class="js-total-cost"></p>
+
+
+  <script>
+    function handleCostKeydown(event){
+      
+    if(event.key === 'Enter'){
+      calculateTotal();
+    }
+    }
+
+    function calculateTotal(){
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value);
+
+      if(cost < 40){
+        cost =  cost + 10;
+      }
+      document.querySelector('.js-total-cost').innerHTML = `Total cost: $${cost}`;
+
+    }
+
+    function Subscribe(){
+      const buttonElement = document.querySelector('.js-button');
+      if(buttonElement.innerHTML === 'Subscribe'){
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add ('is-subscribed');
+      } else{
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+
+  </script>
+  
+</body>
+</html>
