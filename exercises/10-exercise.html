@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-exercise</title>
+  <style>
+    .amazon{
+      background-color: yellow;
+      border: none;
+      padding: 5px  30px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 20px;
+      margin: 10px;
+    }
+    .reqest-button{
+      background-color:black;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+
+    }
+    .schedule-button{
+      background-color: rgb(230,230,230);
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+
+    }
+    .class-button{
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .on-off-btn{
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+
+      margin-bottom: 30px;
+
+      
+    }
+    
+
+    
+
+  </style>
+</head>
+<body>
+  <!--10a amazon button
+  10b uber button
+  10-c class list-->
+  <button class="amazon">Add to cart</button>
+  <button class="reqest-button">Request Now</button>
+  <button class="schedule-button ">Schedule for later</button>
+
+  <button class="class-button">Test</button>
+
+  <button class="on-off-btn"> Gaming</button>
+
+
+  <script>
+    const button = document.querySelector('.class-button');
+
+    console.log(button.classList.add('class-btn'));
+
+    const onOffButton = document.querySelector('.on-off-btn');
+    onOffButton.addEventListener('click', function(){
+      if(onOffButton.innerHTML === 'Gaming'){
+        onOffButton.innerHTML = 'Off';
+      } else{
+        onOffButton.innerHTML = 'Gaming';
+      }
+    
+    });
+
+
+  </script>
+</body>
+</html>
