@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>learn</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="please enter list" class="js-input">
+    <button onclick="addTodo();
+    
+    ">Add</button>
+    <section class="js-html"></section>
+
+    <script>
+      let todoList = ['make dish', 'make recipe'];
+      renderList();
+
+      function renderList() {
+        let todoListHTML ='';
+
+        for (let i =0; i<todoList.length; i++) {
+          const todo = todoList[i];
+          const todoHTML = `<p> ${todo}</p>`
+          todoListHTML += todoHTML;
+
+
+        }
+        console.log(todoListHTML);
+        document.querySelector('.js-html').innerHTML = todoListHTML;
+
+
+      }
+
+
+
+      function addTodo(){
+        const inputElement  = document.querySelector('.js-input');
+        const name = inputElement.value;
+        
+      
+      
+        todoList.push(name);
+        console.log(todoList);
+      
+      
+        inputElement.value = '';
+
+        renderList();
+      
+        
+      }
+
+    </script>
+  </body>
+</html>
