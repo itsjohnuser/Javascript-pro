@@ -6,10 +6,168 @@
   <title>2exercise</title>
 </head>
 <body>
+  <p>b</p>
 
   <script>
+    // 11 O create array of strings, loops over the array, and check if the string 'search'is inside the array. if it is, console.log() the index of search in the array. If not, console.log'-1
+    /*
+    let words = ['words','pineapple','apple','search'];
 
-    
+    let index = -1;
+
+    for (let i = 0; i < words.length; i++){
+      if(words[i] === 'search'){
+        index = i;
+      }
+    }
+    console.log(index);
+
+    words = ['not','found'];
+    index = -1;
+
+    for(let i = 0; i < words.length; i){
+      if(words[i] === 'search'){
+        index = i;
+      }
+    }
+    console.log(index);
+    */
+    //11p modify 11o so that if search appears multiple times in the array, it will console.log() the index of the first appearance of search. use break;
+    /*
+    let words = ['hello', 'world', 'search', 'good', 'search'];
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+          // Once we find 'search', immediately exit
+          // the loop since we want the index of the
+          // first appearance of 'search'.
+          break;
+        }
+      }
+
+      console.log(index);
+
+      words = ['not', 'found'];
+      index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+
+      console.log(index);
+      */ 
+
+      //11Q create a function findindex (array, word )that searches an array for a string )in the word parameter and returns the index of the first appearance of the string. if it doesn't exist in the array, return -1.
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      let words = ['hello', 'world', 'search', 'good', 'search'];
+      console.log(findIndex(words,'search')); // Output: 2
+      console.log(findIndex(words,'notfound')); // Output: -1
+
+      function removeEgg(foods){
+
+        let result = [];
+        
+        for(let i = 0; i < foods.length; i++){
+          if(foods[i]== 'egg'){
+            
+            continue;
+          }
+
+          result.push(foods[i]);
+        }
+        return result;
+
+      }
+     
+      console.log(removeEgg(['egg','apple','orange','egg','ham']));
+
+      // update above remove first two eggs
+
+      function removeEgg(foods){
+
+        let result = [];
+        let eggsRemoved = 0;
+        
+        for(let i = 0; i < foods.length; i++){
+          if(foods[i]== 'egg' && eggsRemoved < 2){
+            eggsRemoved++;
+            continue;
+          }
+
+          result.push(foods[i]);
+        }
+        return result;
+
+      }
+     
+      console.log(removeEgg(['egg','apple','orange','egg','ham','egg']));
+
+      //reverse above
+
+      function removeEgg(foods){
+
+        const reversedFoods = foods.reverse();
+        let result = [];
+        let eggsRemoved = 0;
+        
+        for(let i = 0; i < reversedFoods.length; i++){
+          if(reversedFoods[i]== 'egg' && eggsRemoved< 2){
+            eggsRemoved++;
+            
+            continue;
+          }
+
+          result.push(reversedFoods[i]);
+        }
+        return result.reverse();
+
+      }
+     
+      console.log(removeEgg(['egg','apple','orange','egg','ham']));
+
+      // 'method chaining'
+
+      function removeEgg(foods){
+
+        const foodsCopy = foods.slice();
+
+        const reversedFoods = foodsCopy.reverse();
+        let result = [];
+        let eggsRemoved = 0;
+        
+        for(let i = 0; i < reversedFoods.length; i++){
+          if(reversedFoods[i]== 'egg' && eggsRemoved< 2){
+            eggsRemoved++;
+            
+            continue;
+          }
+
+          result.push(reversedFoods[i]);
+        }
+        return result.reverse();
+
+      }
+       const foods = ['egg','apple','orange','egg','ham']
+      console.log(removeEgg(foods));
+      console.log(foods);
+
+
+
+
   </script>
 </body>
 </html>
