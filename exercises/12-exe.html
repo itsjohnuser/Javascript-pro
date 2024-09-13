@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdvancedFunctions</title>
+</head>
+<body>
+
+  <button class="js-button" onclick="
+  updateButton();
+  
+  ">Start</button>
+  <button class="cart-button"
+  onclick="
+  addToCart();
+  
+  ">Add to cart</button>
+  <p class="js-add"></p>
+
+  <button onclick="messages++";
+  >Add</button>
+  <button onclick="messages--";
+  >Remove</button>
+  <script>
+    // print two times
+    const add = function() {
+      console.log(2 + 3);
+    };
+
+    add();
+    add();
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function() {
+      console.log('12b');
+    });
+    
+    runTwice(add);
+
+    function updateButton(){
+      const button = document.querySelector('.js-button');
+
+      button.innerHTML = 'Running...';
+      setTimeout(function() {
+        button.innerHTML = 'Finished!'
+      },1000);
+    }
+
+
+    let timeOutId;
+
+    function addToCart(){
+      const messege  = document.querySelector('.js-add');
+      messege.innerHTML = 'Added to cart!';
+
+      clearTimeout(timeOutId);
+
+      timeOutId = setTimeout(function(){
+        messege.innerHTML = '';
+      },2000)
+    }
+
+    setInterval(function(){
+      if (document.title ==='App'){
+        document.title = '(2) New Messages'
+      }else{
+        document.title = 'App'
+      }
+    },1000);
+
+
+    let messages = 2;
+
+    setInterval(function(){
+      if(document.title === 'App'){
+        document.title = `(${messages}) New messages`;
+      }else{
+        document.title = 'App';
+      }
+    },1000)
+  </script>
+</body>
+</html>
