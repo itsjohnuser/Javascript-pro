@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <!--
+      Note: This is just a sample solution. Other
+      solutions are possible so don't worry if
+      your solution looks different.
+    -->
+    <button onclick="
+      messages++;
+      displayNotification();
+    ">Add</button>
+
+    <button onclick="
+      if (messages > 0) {
+        messages--;
+
+        // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messages === 0) {
+          stopNotification();
+        }
+      }
+    ">Remove</button>
+
+    <script>
+      let messages = 2;
+
+      // Save the intervalId in case we need to cancel it.
+      let intervalId;
+
+      // We'll use this variable to keep track of whether
+      // or not we're displaying the notification.
+      let isDisplayingNotification;
+
+      // Start displaying the notification in the tab
+      // when the page first loads.
+      displayNotification();
+
+      function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(function() {
+          if (document.title === 'App') {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = 'App';
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
+
+      //12j
+      const multiply = (a , b) =>{
+        return a * b;
+      };
+
+     console.log( multiply(7,10));
+      console.log(multiply(2,3)); // 6
+
+      function countPositive (nums) {
+        let positiveNumbers = 0;
+        nums.forEach((num) =>{
+          if(num > 0){
+            positiveNumbers++;
+          }
+        });
+        return positiveNumbers;}
+      
+      console.log(countPositive([1,2,3,4,5])); // 4
+      console.log(countPositive([-1, -2, -3, -4, -5])); // 
+
+      //map function add by number
+
+      function addNum(array, num){
+        return array.map((value)=>value+num)
+      }
+      console.log(addNum([1,2,3,4,5],23));
+
+
+      //filter Numbers 
+
+      function removeEgg(foods){
+        return foods.filter(foods => foods !== 'egg');
+      }
+      console.log(removeEgg(['egg','apple','orange','egg','ham'])); // ['apple', 'orange', 'ham']
+      
+    </script>
+  </body>
+</html>
