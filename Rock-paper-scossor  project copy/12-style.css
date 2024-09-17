@@ -1,7 +1,7 @@
 body {
-  background-color: rgb(108, 67, 67);
+  background-color: rgb(25, 25, 25);
   color: white;
-  font-family: arial;
+  font-family: Arial;
 }
 
 .title {
@@ -11,14 +11,11 @@ body {
 
 .move-icon {
   height: 50px;
-
-
-
 }
 
 .move-button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 3px solid white;
   width: 120px;
   height: 120px;
   border-radius: 60px;
@@ -26,21 +23,28 @@ body {
   cursor: pointer;
 }
 
-.js-result {
+.result {
   font-size: 25px;
   font-weight: bold;
   margin-top: 50px;
-
 }
 
-.js-score {
-  margin-top: 50px;
+.score {
+  margin-top: 60px;
 }
 
-.reset-score-btn, .Auto-play-button {
+.reset-score-button,
+.auto-play-button,
+/* Solution for exercise 12x. */
+.reset-confirm-button {
   background-color: white;
   border: none;
-  padding: 8px;
   font-size: 15px;
+  padding: 8px 15px;
   cursor: pointer;
+}
+
+/* Solution for exercise 12x. */
+.reset-confirm-button {
+  margin-left: 10px;
 }

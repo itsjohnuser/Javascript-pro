@@ -26,7 +26,17 @@
       }
     ">Remove</button>
 
+    <button class="js-button">Start</button>
+
     <script>
+
+      document.querySelector('.js-button').addEventListener('click',()=>{
+        const button = document.querySelector('.js-button');
+
+        setTimeout(()=>{
+          button.innerHTML = 'Finished!';
+        },1000);
+      })
       let messages = 2;
 
       // Save the intervalId in case we need to cancel it.
@@ -101,6 +111,25 @@
       }
       console.log(removeEgg(['egg','apple','orange','egg','ham'])); // ['apple', 'orange', 'ham']
       
+
+      function removeEgg(foods) {
+        let eggsRemoved = 0;
+
+        return foods.filter((food) => {
+          // If the food is 'egg', we should return false
+          // but only if we haven't removed 2 eggs already.
+          if (food === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            return false;
+          }
+
+          return true;
+        });
+      }
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+
     </script>
   </body>
 </html>
